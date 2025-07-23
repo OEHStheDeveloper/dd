@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2609424429155646"
+     crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    
+    <title>Kombatdle</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="kombatdle_icon1.png">
+    <meta name="description" content="Guess the daily dinosaur through clues">
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VL9JWTVJ59"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-VL9JWTVJ59');
+</script>
+
+<body>
+    <div class="site-container">
+        <div class="header">
+           
+            
+             <h1 id="caption" style="font-size: 64px;">Daily dinosaur</h2>
+                
+       
+
+            <div id="button-box">
+                <button id="guide" class="menubutton tooltip2 expand"
+                    data-title="How to play Daily Dinosaur">Guide</button>
+                <button id="streak" class="menubutton tooltip2 expand"
+                    data-title="Your current daily win streak">Streak: 0</button>
+                <button id="patch-notes" class="menubutton tooltip2 expand"
+                    data-title="Update history of Kombatdle">Dinosaur list</button>
+            </div>
+            <h2 id="caption">Guess the dinosaur of the day!</h2>
+            <div id="victory">
+                <h2 style="padding: 0; margin: 0;">Well done!</h2>
+            </div>
+            <h2 id="checkmark" style="text-shadow: none; margin: 5px;">✅</h2>
+        </div>
+        <div id="countdown_header" class="countdown_section">Next character available in:</div>
+
+            <div id="countdown1" class="countdown_section"></div>
+        <div class="search-container">
+            <input type="text" id="searchinput" placeholder="Insert dinosaur name..." oninput="showSuggestions()">
+            <button id="button" onclick="guess()">Enter</button>
+            <div id="suggestions"></div>
+        </div>
+
+        <div id="rows">
+            <div id="cards">
+                <div id="character" class="card">Dinosaur</div>
+                <div id="gender" class="card tooltip expand" data-title="Armored, Horned, Predator.." style="z-index: 10;">Trait </div>
+                <div id="race" class="card tooltip expand" data-title="Carnivore, Herbivore, Omnivore" style="z-index: 10;">Diet</div>
+                <div id="faction" class="card tooltip expand"
+                    data-title="The given weight of the dinosaur in kg" style="z-index: 10;">Weight</div>
+                <div id="realm" class="card tooltip expand" data-title="Earthrealm, Outworld, Edenia.."
+                    style="z-index: 10;">Length</div>
+                <div id="color" class="card tooltip expand" data-title="Good, Neutral, Evil, Unwillingly Evil.."
+                    style="z-index: 10;">Area</div>
+                <div id="debut" class="card tooltip expand" data-title="Mortal Kombat 1 (1997), Mortal kombat 2.."
+                    style="z-index: 10;">Age</div>
+
+            </div>
+
+            <div id="answer-container" class="answer-container"></div>
+
+
+            <section id="victory-section" class="section">
+                <!-- <span class="overlay"></span>-->
+                <div id="overlay" onclick="off()"></div>
+                <div class="modal-box">
+                    <i class="fa-regular fa-circle-check"></i>
+                    <h2 id="flawless-victory"></h2>
+                    <h2>Fatality!</h2>
+                    <h3>You have sucessfully completed the game</h3>
+                    <h3 id="guess-count">Well done!</h3>
+                    <h2 style="text-shadow: none; margin: 5px;">✅</h2>
+                    <h3>Next character available in:</h3>
+                    <div id="countdown"></div>
+                    <div class="buttons">
+                        <button class="close-btn">Continue</button>
+                    </div>
+                    <h3 id="characterOfTheDay">Character of the day: </h3>
+                </div>
+
+
+            </section>
+
+            <section id="guide-section" class="section">
+                <div id="overlay" onclick="off()"></div>
+                <div class="modal-box left_text long">
+                    <i class="fa-regular fa-circle-check"></i>
+                    <h2 id="flawless-victory"></h2>
+                    <h2>Guide!</h2>
+                    <h3 class="bigger_text">How to play daily dinosaur</h3>
+                    <h3 style="text-align: center;"> The game is all about guessing the dinosaur of the Day based on a series of clues.<br><br> Each time you make a guess, colored squares will appear next to different trait categories.<br><br> These squares represent how closely your guessed character matches the traits of the correct character.<br><br> - A green square means your guess shares the exact same trait as the character of the day.<br> <div class="example_square"></div><br> - An orange square means there are some similarities in that trait, but also one or more differences.<br> <div class="example_square" style="background-color: rgb(255,153,0);"></div><br> - A red square means there are no common traits in that category.<br> <div class="example_square" style="background-color: red;"></div><br><br> Use the information from each guess to narrow down the possibilities and figure out the correct character.<br><br> Good luck, and enjoy playing! </h3>
+            </section>
+            <!-- 
+      <section id="guide-section" class="section">
+        <div id="overlay1" onclick="off()"></div>
+        <div class="modal-box">
+          <i class="fa-regular fa-circle-check"></i>
+          <h2 id="flawless-victory"></h2>
+          <h2>Guide!</h2>
+          <h3>How to play mortal kombatdle:</h3>
+          <h3>The game is about guessing the selected character of the day. Each time you make a guess by entering a character name, and then entering the guess. On a guess, squares will then appear on the rows with the different categories. The squares describe what the guessed character's features is. Each square will have a color, each with their own unique meaning. A green square means that your character has the same traits as the character of the day. An orange square means that they share a trait, but they also have a trait that they do not share. A red square means that they do not have anything in common in the given category. Each guess will therefore give you more and more info, until you can deduce what character is the character of the day</h3>
+      </section>
+-->
+            <section id="patch-notes-section" class="section">
+                <div id="overlay" onclick="off()"></div>
+                <div class="modal-box">
+                    <i class="fa-regular fa-circle-check"></i>
+                    <h2 id="flawless-victory"></h2>
+                    <h2>List of dinosaurs</h2>
+                                        <h3>Allosaurus</h3>
+                    <h3>Ankylosaurus</h3>
+                    <h3>Brontosaurus</h3>
+                    <h3>Mosasaurus</h3>
+                    <h3>Pterodactyl</h3>
+                    <h3>Spinosaurus</h3>
+                    <h3>Stegosaurus</h3>
+                    <h3>Triceratops</h3>
+                    <h3>Tyrannosaurus rex</h3>
+                    <h3>Velociraptor</h3>
+
+            </section>
+
+            <section id="characters-section" class="section">
+                <div id="overlay" onclick="off()"></div>
+                <div class="modal-box modal-box-scroll">
+                    <i class="fa-regular fa-circle-check"></i>
+                    <h2 id="flawless-victory"></h2>
+                    <h2>Characters</h2>
+                    <h3 class="question">Which characters are in the game?</h3>
+<h3 class="answer">
+    All characters who have appeared in the NetherRealm era are included by default. The reason the character pool is limited to modern-era characters is because many of the 3D era fighters are obscure or niche, which could make the game significantly more difficult for players unfamiliar with the Midway era.<br><br>
+    However, you can start a new game with 3D era characters in the pool by clicking the 3D Mode button. This will begin a new game that includes those characters.
+</h3>
+
+<h3 class="question">What character lore is used?</h3>
+<h3 class="answer">
+    In Mortal Kombat, a character’s traits and story often change from game to game depending on the current narrative. This means characters may acquire new attributes or roles over time.<br><br>
+    To keep things consistent, this game uses the state of each character as they were before the creation of the New Era in Mortal Kombat 11 (2019). For example, Liu Kang is considered both a god and a human, due to the events in Mortal Kombat 11. If a character has had multiple traits due to story progression, they are reflected in this game. For instance, Scorpion starts as a revenant in Mortal Kombat (2011), but by the end of Mortal Kombat X, he is human again — so he is considered both "Human" and "Revenant" in this game.
+</h3>
+
+<h3 class="answer">
+    Retcons are also treated as canon where applicable. So for example, Sindel is considered "Evil" rather than "Good, Unwillingly Evil".
+</h3>
+
+<h3 class="question">What about the characters in Mortal Kombat 1?</h3>
+<h3 class="answer">
+    3D era characters who only appear in the Mortal Kombat 1 (New Era) timeline are not included in the normal mode character pool.
+</h3>
+
+<h3 class="question">I disagree with how a character's canon is established! Is there any way to get it fixed?</h3>
+<h3 class="answer">
+    Feel free to contact me on X at <a style="color: white;"href="https://x.com/Ailu_Dev" target="_blank">Ailu_dev</a> on X or on ailuinteractive<a style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">@</a>gmail.com, if you notice any mistakes or have feedback on how certain character traits should be represented. I'm open to revisiting decisions if there's a flaw in the logic.
+</h3>
+                </div>
+            </section>
+
+            <section id="information-section" class="section">
+                <div id="overlay" onclick="off()"></div>
+                <div class="modal-box left_text long">
+                    <i class="fa-regular fa-circle-check"></i>
+                    <h2 id="flawless-victory"></h2>
+                    <h2>Information</h2>
+                    <h3 class="bigger_text"></h3>
+                    <h3 style="text-align: center;">
+                        Made by <a style="color: white;"href="https://x.com/Ailu_Dev" target="_blank">Ailu_dev</a>.
+                        <br><br>Kombatdle is an independent project and is not affiliated with or endorsed by Warner Bros. or NetherRealm Studios.   </h3>
+            </section>
+
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <script src="dinosaur_script.js">
+
+
+        </script>
+
+    </div>
+    </div>
+
+</body>
+
+</html>
