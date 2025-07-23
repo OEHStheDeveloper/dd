@@ -247,8 +247,8 @@ const pictureDatabase = {
                     flawless_victory = true;
                     console.log("flawless victory!")
                     let flawless_victory_text = document.getElementById("flawless-victory")
-                    flawless_victory_text.innerHTML = "Flawless Victory!"
-                    document.getElementById("guess-count").innerHTML = `You guessed the character in a single attempt. Well done!`
+                    flawless_victory_text.innerHTML = "Perfect Victory!"
+                    document.getElementById("guess-count").innerHTML = `You guessed the dinosaur in a single attempt. Well done!`
                 }
 
                 const stored_squares = Array.from(answer_container.children).map(div => div.outerHTML);
