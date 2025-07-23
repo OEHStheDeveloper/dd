@@ -29,15 +29,15 @@ const characterDatabase = {
 
 const pictureDatabase = {
                 "ankylosaurus": { picture_url: "ankylosaurus.jpg" },
-                "velociraptor": { picture_url: "Pictures/velociraptor1.jpg" },
-                "allosaurus": { picture_url: "Pictures/allosaurus1.avif" },
-                "spinosaurus": { picture_url: "Pictures/spinosaurus1.png" },
-                "brontosaurus": { picture_url: "Pictures/brontosaurus1.webp" },
-                "triceratops": { picture_url: "Pictures/triceratops.webp" },
-                "stegosaurus": { picture_url: "Pictures/stegosaurus.jpg" },
-                "tyranosaurus rex": { picture_url: "Pictures/tyrannosaurus1.jpg" },
-                "pterodactyl": { picture_url: "Pictures/pterodactyl.jpg" },
-                "mosasaurus": { picture_url: "Pictures/mosasaurus1.webp" },
+                "velociraptor": { picture_url: "velociraptor1.jpg" },
+                "allosaurus": { picture_url: "allosaurus1.avif" },
+                "spinosaurus": { picture_url: "spinosaurus1.png" },
+                "brontosaurus": { picture_url: "brontosaurus1.webp" },
+                "triceratops": { picture_url: "triceratops.webp" },
+                "stegosaurus": { picture_url: "stegosaurus.jpg" },
+                "tyranosaurus rex": { picture_url: "tyrannosaurus1.jpg" },
+                "pterodactyl": { picture_url: "pterodactyl.jpg" },
+                "mosasaurus": { picture_url: "mosasaurus1.webp" },
             }
 
             let banned_list = JSON.parse(localStorage.getItem("banned_list")) || []; // Retrieve banned list from local storage or initialize as empty
